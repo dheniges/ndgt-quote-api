@@ -15,15 +15,31 @@
 	<div class="container">
 		<div id="leftContainer">
 			<h2>What is it?</h2>
-			<p>The Neil deGrasse Tyson Quote API offers JSON formatted quotes for your consumption. Currently there is no rate limit on the api</p>
+			<p>The Neil deGrasse Tyson Quote API offers JSON formatted quotes for your consumption. Currently there is no rate limit on the API</p>
 			
 		</div>
 		
 		<div id="rightContainer">
-			<h2>How to use</h2>
+			<h2>How to use it</h2>
 			<p>Grab a a random quote by going to <a href="/quote_api/random">/quote_api/random</a>. 
 			Grab a specific quote by going to /quote/[id].json where [id] is the id of the
 			quote you want. Such as <a href="/quotes/1.json">/quotes/1.json</a></p>
+			<p>Want to embed a random quote in your website? Just paste in the snippet below:</p>
+			<pre><code>
+				
+				&lt;div id="ndgtQuote"&gt;&lt;/div&gt;
+				&lt;script type="text/javascript"&gt;
+					function ndgtParse(response) {
+						var div = document.getElementById('ndgtQuote');
+						div.innerHTML = response.quote + "&lt;br /&gt;- Neil deGrasse Tyson";
+					}
+
+				    var url = "http://www.neildegrassetysonquotes.com/quote_api/random.jsonp?callback=ndgtParse";
+				    var script = document.createElement('script');
+				    script.setAttribute('src', url);
+				    document.getElementsByTagName('head')[0].appendChild(script);
+				&lt;/script&gt;
+			</code></pre>
 		</div>
 	</div>
   	
