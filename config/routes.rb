@@ -3,7 +3,10 @@ Enviroapp::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/rails_admin', :as => 'rails_admin'
 
-  resources :quotes
+  #resources :quotes
+  
+  match 'quotes' => 'quotes#index'
+  match 'quotes/:id' => 'quotes#show'
 
   get "quote_api/random"
 
