@@ -1,10 +1,13 @@
 class QuoteApiController < ApplicationController
   
   def random
-  	# Optimize this for 
+  	# Optimize this
   	quote = Quote.find(rand(Quote.count) + 1)
   	
-  	render json: quote
+  	# Allow cross domain requests
+  	response.headers['Access-Control-Allow-Origin'] = '*'
+  	
+  	render :json => quote, :callback => params[:callback]
   end
   
 end
