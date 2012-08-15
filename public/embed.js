@@ -1,7 +1,7 @@
 ndgt_quotes = {
 	init: function() {
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open('GET', 'http://0.0.0.0:3000/quote_api/random.jsonp?callback=ndgt_quotes.parseResponse', true);
+		xmlhttp.open('GET', 'http://www.neildegrassetysonquotes.com/quote_api/random.jsonp?callback=ndgt_quotes.parseResponse', true);
 		xmlhttp.send();
 		
 		xmlhttp.onreadystatechange=function() {
