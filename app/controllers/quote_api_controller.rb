@@ -4,12 +4,7 @@ class QuoteApiController < ApplicationController
   	# Optimize this for 
   	quote = Quote.find(rand(Quote.count) + 1)
   	
-  	render json: {
-  		'quote' => quote.quote,
-  		'date' => quote.date,
-  		'source' => quote.source,
-  		'url' => quote.link
-  	}
+  	render json: quote
   end
   
 end
